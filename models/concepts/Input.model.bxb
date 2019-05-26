@@ -1,0 +1,10 @@
+structure (Input) {
+  property (mode) {
+    type (Mode)
+    min (Required) max (One)
+  }
+  property (queryAddr){
+    type (QueryAddress)
+    min(Optional) max (One)
+  }
+}

@@ -1,0 +1,6 @@
+enum (Mode) {
+  description (사용자가 원하는 결과값)
+  symbol (roadAddr)
+  symbol (zipCode)
+  symbol (engAddr)
+}

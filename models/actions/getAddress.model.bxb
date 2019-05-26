@@ -1,0 +1,15 @@
+action (getAddress) {
+  description (주소정보가 비어있는 경우 받아오는 액션)
+  type(Search)
+  collect {
+    input (queryAddr) {
+      type (QueryAddress)
+      min (Required) max (One)
+    }
+  }
+  output (QueryAddress){
+    evaluate{
+      $expr(queryAddr)
+    }
+  }
+}

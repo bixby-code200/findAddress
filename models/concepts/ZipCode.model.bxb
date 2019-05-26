@@ -1,0 +1,3 @@
+text (ZipCode) {
+  description (우편번호)
+}
