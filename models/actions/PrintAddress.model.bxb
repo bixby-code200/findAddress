@@ -10,7 +10,7 @@ action (PrintAddress) {
         if (!exists(input.queryAddr)){
           replan{
             intent{
-              goal: getAddress
+              goal: GetAddress
             }
           }
         }

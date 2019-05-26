@@ -1,4 +1,4 @@
-action (getAddress) {
+action (GetAddress) {
   description (주소정보가 비어있는 경우 받아오는 액션)
   type(Search)
   collect {

@@ -1,0 +1,8 @@
+endpoints {
+  action-endpoints {
+    action-endpoint (PrintAddress) {
+      accepted-inputs (input)
+      local-endpoint (printAddress.js)
+    }
+  }
+}
