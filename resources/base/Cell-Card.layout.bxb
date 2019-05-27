@@ -1,0 +1,23 @@
+layout-macro-def(cell-card) {
+  params {
+    param (results) {
+      type (Results)
+      min (Required)
+      max (One)
+    }
+  }
+  content {
+    cell-card{
+      slot2 {
+        content{
+          order (PrimarySecondary)
+          primary("#{value(results.roadAddr)}")
+          secondary("#{value(results.engAddr)}")
+        }  
+      }
+      slot3{
+        label("#{value(results.zipCode)}")
+      }
+    }
+  }
+}

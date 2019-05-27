@@ -1,0 +1,22 @@
+result-view{
+  match: Results(this)
+  message{
+    if(size(this)==1){
+      template ("우편번호와 도로명주소를 확인해보세요!")
+    }else{
+      template ("총 #{size(this)}개의 주소 정보가 확인되었습니다.")
+    }
+  }
+  render{
+    list-of (this){
+      has-details (true)
+      where-each (item){
+        layout-macro (cell-card){
+          param (this){
+            expression (item)
+          }
+        }
+      }
+    }
+  }
+}
