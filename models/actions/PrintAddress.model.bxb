@@ -2,19 +2,23 @@ action (PrintAddress) {
   description (사용자의 발화에 맞춘 주소검색)
   type(Search)
   collect {
-    input (input) {
-      type (Input)
+    input (queryAddr) {
+      type (QueryAddress)
       min (Required) max (One)
       // 사용자가 한번에 주소도 말했다면 해결, 아니라면 주소발화창을 줘야한다.  
-      validate{
-        if (!exists(input.queryAddr)){
-          replan{
-            intent{
-              goal: GetAddress
-            }
-          }
-        }
-      }
+      // validate{
+      //   if (!exists(input.queryAddr)){
+      //     replan{
+      //       intent{
+      //         goal: GetAddress
+      //       }
+      //     }
+      //   }
+      // }
+    }
+    input (mode){
+      type(Mode)
+      min(Required) max(One)
     }
   }
   output (Results)

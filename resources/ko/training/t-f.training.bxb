@@ -1,0 +1,5 @@
+train (t-ffp4hdkiaaqhds5vfeuzkdsj9) {
+  utterance ("[g:Results] (가람로90)[v:QueryAddress]의 (우편번호)[v:Mode:zipCode] 알려줘")
+  plan (Y2BhUEzOT0k1MjDQS8vMS4mvzC8tik9MSSlKLS7WC0otLs0pKWZQw60koCgzr8QRwmGQw63OFyiDz5zA0tSiSpg5zAyMDExAkgFIgyAEgPhgUQA=)
+  last-modified (1558944660695)
+}

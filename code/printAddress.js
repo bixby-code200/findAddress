@@ -1,25 +1,31 @@
-module.exports.function = function printAddress (input) {
+module.exports.function = function printAddress (queryAddr, mode) {
   const config = require('config');
   const http = require('http');
   const console = require('console');
   const fail = require('fail')
   
   const api_key = config.get('api_key');
-  let url = config.get('url')+'?confmKey='+api_key+'&currentPage=1&countPerPage=50&keyword='+input.queryAddr+'&resultType=json';
+  let url = config.get('url')+"?confmKey="+api_key+"&currentPage=1&countPerPage=50&keyword="+queryAddr+"&resultType=json";
   
-  let result = [];
-  const response = http.getUrl(url,{format:"json", cacheTime: 0, returnHeaders:true});
-  if(response.results.common.errorCode !== 0){
+  let response = http.getUrl(url,{format:"json", cacheTime: 0, returnHeaders:true});
+  
+  response = JSON.parse(response.responseText.slice(1,-1))
+  
+  if(response.results.common.errorCode != 0){
       throw fail.checkedError(response.results.common.errorMessage);
   }
   
-  for (let juso in response.results.juso){
+  let result = [];
+  response.results.juso.forEach(juso => {
+    console.log(result)
     result.push({
       roadAddr : juso.roadAddr,
       engAddr : juso.engAddr,
       zipCode : juso.zipNo
     })
-  }
+  })
+  
+  console.log(result[0])
 
   return result;
 }

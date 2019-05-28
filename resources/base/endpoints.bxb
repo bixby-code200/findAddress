@@ -1,7 +1,7 @@
 endpoints {
   action-endpoints {
     action-endpoint (PrintAddress) {
-      accepted-inputs (input)
+      accepted-inputs (queryAddr, mode)
       local-endpoint (printAddress.js)
     }
   }
